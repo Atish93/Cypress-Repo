@@ -1,18 +1,19 @@
-describe('template spec', () => {
+import { logo, searchEngineLocator } from "../constants/homePage";
 
-  beforeEach(()=>{
-    cy.visit('https://www.flipkart.com/');
-  })
+describe("template spec", () => {
+  beforeEach(() => {
+    cy.visit("/");
+  });
 
-  it('passes', () => {
-    cy.get('img[title="Flipkart"]').should('be.visible');
-  })
+  it("passes", () => {
+    cy.get(logo).should("be.visible");
+  });
 
-  it('Check Search Engine', ()=>{
-    cy.get('input[placeholder="Search for Products, Brands and More"]').should('be.visible');
-  })
+  it("Check Search Engine", () => {
+    cy.get(searchEngineLocator).should("be.visible");
+  });
 
-  it('Type in Search Engine', ()=>{
-    cy.get('input[placeholder="Search for Products, Brands and More"]').type('mobile').should('have.value', 'mobile');
-  })
-})
+  it("Type in Search Engine", () => {
+    cy.get(searchEngineLocator).type("mobile").should("have.value", "mobile");
+  });
+});
