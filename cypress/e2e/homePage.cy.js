@@ -1,4 +1,9 @@
-import { logo, searchEngineLocator } from "../constants/homePage";
+import {
+  cartIcon,
+  loginButton,
+  logo,
+  searchEngineLocator,
+} from "../constants/homePage";
 
 describe("template spec", () => {
   beforeEach(() => {
@@ -15,5 +20,13 @@ describe("template spec", () => {
 
   it("Type in Search Engine", () => {
     cy.get(searchEngineLocator).type("mobile").should("have.value", "mobile");
+  });
+
+  it("Check Login Button", () => {
+    cy.get(loginButton).contains("Login").should("be.visible");
+  });
+
+  it("Check Cart Icon", () => {
+    cy.get(cartIcon).should("be.visible");
   });
 });
