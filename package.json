@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "cypress": "^13.14.1"
+    "cypress": "^13.14.1",
+    "cypress-localstorage-commands": "^2.2.6"
   },
   "name": "cypress-automation",
   "version": "1.0.0",
